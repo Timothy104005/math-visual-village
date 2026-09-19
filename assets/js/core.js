@@ -443,6 +443,7 @@
       '<p class="en-sub">' + cfg.en + "</p>" +
       '<div class="hero-formula sk-frame">' + SK.tex(cfg.formula, true) + "</div>" +
       '<div class="hero-meta">' + tracks + codes + "</div>" +
+      (meta.tracks.indexOf("X") >= 0 ? '<p class="beyond-note">' + SK.icon("leaf") + "這是<b>課綱外的補充單元</b>：不在考試範圍內，放在這裡是因為它能幫助理解正式內容，或值得欣賞。</p>" : "") +
       '<div class="hero-deco">' + SK.bouquet() + "</div>";
     main.appendChild(hero);
 

@@ -640,3 +640,11 @@ kbd {
 .m-card .m-roads { padding: 0 0 10px; }
 .m-card .m-close { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; border: none; background: none; font-size: 1.4rem; color: var(--ink-soft); cursor: pointer; }
 @media (min-width: 761px) { .m-card { display: none !important; } }
+
+/* 課綱外補充 */
+.chip.t-X .dot-i { background: var(--rose); }
+.beyond-note {
+  display: flex; gap: 8px; align-items: flex-start; margin: 14px 0 0; padding: 10px 14px; max-width: 640px;
+  border: 1px dashed var(--m-rose); border-radius: 12px; background: #FBF1EF; font-size: .92rem; color: var(--ink);
+}
+.beyond-note svg { width: 20px; height: 20px; flex: none; margin-top: 2px; }

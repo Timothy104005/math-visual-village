@@ -92,7 +92,7 @@
     '<p class="muted" style="margin-top:-8px">每一區是一個大概念，每一棟小房子是一條公式。虛線小路代表「這條公式用到了那條公式的想法」。' + (soonN ? "有顏色的房子已經開放，虛線的還在施工中。" : "全部 " + readyN + " 棟小房子都已經開放，點一下就能走進去。") + '</p>';
   var filters = SK.h("div", { class: "filters", role: "group", "aria-label": "依年級篩選" });
   filters.innerHTML = '<span class="lbl">我在學：</span>';
-  var trackKeys = ["all", "10", "A", "B", "J"];
+  var trackKeys = ["all", "10", "A", "B", "J", "X"];
   var current = "all";
   trackKeys.forEach(function (k) {
     var tr = cat.tracks[k];
@@ -104,14 +104,21 @@
   town.appendChild(filters);
 
   /* 版面：三欄區塊，高度依房子數量自動決定 */
-  var layout = {
-    algebra: [20, 20], trig: [20, 305],
-    series: [350, 20], vector: [350, 200], calc: [350, 380],
-    "function": [680, 20], prob: [680, 200]
-  };
+  var COLS = [["algebra", "trig"], ["series", "vector", "calc"], ["function", "prob"]];
+  var layout = {}, colBottom = 0;
+  COLS.forEach(function (col, ci) {
+    var y = 20;
+    col.forEach(function (id) {
+      var n = cat.units.filter(function (u) { return u.region === id; }).length;
+      layout[id] = [20 + ci * 330, y];
+      y += 64 + Math.ceil(n / 3) * 100 + 20;
+    });
+    colBottom = Math.max(colBottom, y);
+  });
+  var GARDEN = 150, MAPH = colBottom + GARDEN;
   var W = 300, housePos = {};
   var mapBox = SK.h("div", { class: "town sk-frame" });
-  var svg = SK.svg(mapBox, 1000, 600, "數學小鎮地圖");
+  var svg = SK.svg(mapBox, 1000, MAPH, "數學小鎮地圖");
   s("defs", {}, svg).innerHTML = '<pattern id="spk-map" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="8" cy="10" r=".9" fill="#4A3F37" opacity=".25"/><circle cx="31" cy="22" r=".6" fill="#4A3F37" opacity=".22"/><circle cx="19" cy="38" r="1" fill="#FDFBF6" opacity=".8"/><circle cx="40" cy="6" r=".6" fill="#4A3F37" opacity=".25"/></pattern>';
   var gRegion = s("g", {}, svg), gRoad = s("g", {}, svg), gHouse = s("g", {}, svg), gDeco = s("g", {}, svg);
 
@@ -199,15 +206,20 @@
   filters.appendChild(allRoads);
 
   /* 右下角的空地：池塘、樹與告示牌 */
-  gDeco.innerHTML =
-    '<path d="M700 580V430a56 56 0 0 1 112 0v150z" fill="#E3ECEA"/><path d="M826 580V400a60 60 0 0 1 120 0v180z" fill="#FAE8DD"/>' +
-    '<rect x="690" y="380" width="280" height="200" fill="url(#spk-map)"/>' +
-    '<g transform="translate(716 468) scale(1.3)">' + inner(SK.botanical(0)) + "</g>" +
-    '<g transform="translate(846 440) scale(1.4)">' + inner(SK.botanical(1)) + "</g>" +
-    '<g transform="translate(760 390) rotate(-3)"><rect width="150" height="34" rx="8" fill="#FDFBF6" stroke="#4A3F37" stroke-width="1.2"/>' +
-    '<text x="75" y="23" text-anchor="middle" style="font-family:var(--font-latin-hand);font-size:16px;fill:#4A3F37">' + (soonN ? "more houses soon" : "see it, say it") + '</text></g>' +
-    '<path d="M696 580h268" stroke="#4A3F37" stroke-width="1.3" stroke-linecap="round"/>' +
-    ico("sparkle", 940, 372, .9);
+  /* 地圖最下方的小花園：一排拱形色塊與植物 */
+  var gy = MAPH - 12, arches = [[60, 90, 70, "#E3ECEA"], [170, 110, 96, "#FAE8DD"], [300, 80, 60, "#E8EDE1"], [620, 90, 78, "#F8F1DC"], [740, 110, 100, "#E3ECEA"], [870, 84, 66, "#FAE8DD"]];
+  gDeco.innerHTML = arches.map(function (a) { return '<path d="M' + a[0] + " " + gy + "V" + (gy - a[2]) + "a" + a[1] / 2 + " " + a[1] / 2 + " 0 0 1 " + a[1] + " 0V" + gy + 'z" fill="' + a[3] + '"/>'; }).join("") +
+    '<rect x="40" y="' + (gy - 150) + '" width="920" height="150" fill="url(#spk-map)" opacity=".7"/>' +
+    '<g transform="translate(80 ' + (gy - 76) + ') scale(1.2)">' + inner(SK.botanical(0)) + "</g>" +
+    '<g transform="translate(196 ' + (gy - 104) + ') scale(1.3)">' + inner(SK.botanical(1)) + "</g>" +
+    '<g transform="translate(314 ' + (gy - 66) + ') scale(1)">' + inner(SK.botanical(3)) + "</g>" +
+    '<g transform="translate(640 ' + (gy - 84) + ') scale(1.1)">' + inner(SK.botanical(2)) + "</g>" +
+    '<g transform="translate(766 ' + (gy - 108) + ') scale(1.3)">' + inner(SK.botanical(0)) + "</g>" +
+    '<g transform="translate(884 ' + (gy - 72) + ') scale(1.1)">' + inner(SK.botanical(1)) + "</g>" +
+    '<g transform="translate(425 ' + (gy - 70) + ') rotate(-2)"><rect width="150" height="34" rx="8" fill="#FDFBF6" stroke="#4A3F37" stroke-width="1.2"/>' +
+    '<text x="75" y="23" text-anchor="middle" style="font-family:var(--font-latin-hand);font-size:16px;fill:#4A3F37">see it, say it</text></g>' +
+    '<path d="M40 ' + gy + 'H960" stroke="#4A3F37" stroke-width="1.3" stroke-linecap="round"/>' +
+    ico("sparkle", 590, gy - 120, .9) + ico("sparkle", 400, gy - 130, .7);
 
   town.appendChild(mapBox);
   town.insertAdjacentHTML("beforeend", '<div class="town-legend"><span>' + SK.icon("house").replace("<svg", '<svg style="width:18px;height:18px"') + "有顏色的房子：已開放</span>" +

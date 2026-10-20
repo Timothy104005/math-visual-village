@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>圖解數學小鎮｜高中數學公式圖像推導</title>
+<meta name="description" content="圖解數學小鎮是高中數學互動學習網站，依 108 課綱整理高一、數 A、數 B、數甲、數乙，用圖像一步一步推導公式，並提供單元練習與模擬試題。">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@400;600;700&family=LXGW+WenKai+TC:wght@400;700&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/css/storybook.css">
+<!-- seo:head:start -->
+<link rel="canonical" href="https://math-visual-village.pages.dev/">
+<meta property="og:site_name" content="圖解數學小鎮">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://math-visual-village.pages.dev/">
+<meta property="og:title" content="圖解數學小鎮｜高中數學公式圖像推導">
+<meta property="og:description" content="圖解數學小鎮是高中數學互動學習網站，依 108 課綱整理高一、數 A、數 B、數甲、數乙，用圖像一步一步推導公式，並提供單元練習與模擬試題。">
+<script type="application/ld+json" id="seo-schema">{"@context":"https://schema.org","@type":"WebSite","name":"圖解數學小鎮","url":"https://math-visual-village.pages.dev/","inLanguage":"zh-Hant","description":"圖解數學小鎮是高中數學互動學習網站，依 108 課綱整理高一、數 A、數 B、數甲、數乙，用圖像一步一步推導公式，並提供單元練習與模擬試題。"}</script>
+<!-- seo:head:end -->
+</head>
+<body>
+<!-- seo:content:start -->
+<main id="seo-content" class="wrap" style="padding-block:2rem"><nav aria-label="網站導覽"><a href="/">圖解數學小鎮</a> · <a href="/practice/">解題練習場</a> · <a href="/exams/">全真模擬卷</a></nav>
+<h1>圖解數學小鎮</h1>
+<p>圖解數學小鎮是高中數學互動學習網站，依 108 課綱整理高一、數 A、數 B、數甲、數乙，用圖像一步一步推導公式，並提供單元練習與模擬試題。</p>
+<h2>用圖像理解高中數學</h2><p>先觀察與猜想，再一步一步看公式如何成立。每個單元都有互動圖像、不同看法與練習，老師也可以使用上課模式。</p>
+<h2>高中數學課程目錄</h2>
+<section><h3>數與式</h3><ul><li><a href="/units/square-of-sum">乘法公式</a>：切一刀，正方形就說出答案</li>
+<li><a href="/units/am-gm">算幾不等式</a>：半圓裡，半徑永遠最高</li>
+<li><a href="/units/exp-log">指數與對數</a>：同一個問題的正反方向</li>
+<li><a href="/units/poly-roots">多項式的根與因式</a>：為什麼 x−a 特別重要</li>
+<li><a href="/units/complex-plane">複數平面</a>：乘法就是旋轉加縮放</li>
+<li><a href="/units/complex-equations">複數與方程式</a>：每一個根都找得到位置</li>
+<li><a href="/units/roots-of-unity">複數的 n 次方根</a>：根在圓上等分排列</li>
+<li><a href="/units/rational-root">有理根候選</a>：有限個候選人</li>
+<li><a href="/units/real-numbers">實數與數線</a>：數線上的每一點都是數</li>
+<li><a href="/units/abs-value">絕對值</a>：到某一點的距離</li>
+<li><a href="/units/numeric-error">數值計算的誤差</a>：計算機也會算錯</li>
+<li><a href="/units/logic">邏輯與條件</a>：充分、必要，就是誰包含誰</li>
+<li><a href="/units/log-laws">對數律</a>：把乘法變成加法的尺</li>
+<li><a href="/units/radicals">根式與分式運算</a>：把根號搬到分母外面</li></ul></section>
+<section><h3>數列與級數</h3><ul><li><a href="/units/arithmetic-series">等差級數</a>：兩個階梯拼成長方形</li>
+<li><a href="/units/geometric-series">等比數列與級數</a>：一直乘，不是一直加</li>
+<li><a href="/units/recurrence">遞迴關係式</a>：只說下一步怎麼走</li>
+<li><a href="/units/infinite-geometric">無窮等比級數</a>：一直切一半，剛好填滿</li>
+<li><a href="/units/induction">數學歸納法</a>：推倒第一張骨牌</li></ul></section>
+<section><h3>函數與圖形</h3><ul><li><a href="/units/completing-square">配方法與頂點式</a>：剪一條、補一角</li>
+<li><a href="/units/cubic-shape">三次函數的樣子</a>：局部看起來像直線</li>
+<li><a href="/units/exp-growth">按比例成長與 e</a>：連續複利長出的常數</li>
+<li><a href="/units/parabola">拋物線</a>：到點與到線一樣遠</li>
+<li><a href="/units/ellipse">橢圓</a>：兩根釘子一條繩</li>
+<li><a href="/units/hyperbola">雙曲線</a>：距離差固定</li>
+<li><a href="/units/conic-reflection">二次曲線的反射</a>：焦點名字的由來</li>
+<li><a href="/units/poly-inequality">多項式不等式</a>：圖形在 x 軸上方的部分</li>
+<li><a href="/units/exp-log-graphs">指數與對數函數</a>：對 y=x 翻過去的兩條曲線</li>
+<li><a href="/units/conic-sections">平面截圓錐</a>：一刀切出四種曲線</li>
+<li><a href="/units/functions-basics">函數的基本性質</a>：對應、奇偶、反函數、合成</li></ul></section>
+<section><h3>三角的世界</h3><ul><li><a href="/units/unit-circle">三角比與單位圓</a>：sin、cos 是影子的長度</li>
+<li><a href="/units/law-of-cosines">餘弦定理</a>：畢氏定理多了一個修正項</li>
+<li><a href="/units/triangle-area">三角形面積</a>：夾角把邊折算成高</li>
+<li><a href="/units/angle-sum">和角公式</a>：兩個直角三角形疊成長方形</li>
+<li><a href="/units/double-angle">二倍角與半角</a>：角度加倍，值不會加倍</li>
+<li><a href="/units/radian">弧度量</a>：用半徑去量角</li>
+<li><a href="/units/waves">波的疊合</a>：同頻的波加起來還是波</li>
+<li><a href="/units/heron">海龍公式</a>：只用三邊求面積</li>
+<li><a href="/units/median-theorem">中線定理</a>：把角度消掉的技巧</li>
+<li><a href="/units/polar-equation">極坐標方程式</a>：方程式在挑選點</li>
+<li><a href="/units/trig-graphs">三角函數的圖形</a>：把單位圓攤開</li>
+<li><a href="/units/periodic-model">週期性數學模型</a>：摩天輪的高度</li>
+<li><a href="/units/law-of-sines">正弦定理與測量</a>：外接圓的直徑藏在比值裡</li></ul></section>
+<section><h3>坐標與空間</h3><ul><li><a href="/units/coord-symmetry">坐標圖形的對稱</a>：摺一摺，坐標就換位子</li>
+<li><a href="/units/line-equation">直線方程式</a>：斜率是一路上的坡度</li>
+<li><a href="/units/circle-equation">圓方程式</a>：畢氏定理繞一圈</li>
+<li><a href="/units/line-circle">直線與圓</a>：比一比 d 和 r</li>
+<li><a href="/units/space-concept">空間中的線與面</a>：歪斜線與三垂線</li>
+<li><a href="/units/space-coords">空間坐標與經緯度</a>：三個數字定位一點</li>
+<li><a href="/units/perspective">比例與透視</a>：遠的東西為什麼變小</li>
+<li><a href="/units/linear-programming">線性規劃</a>：把平行線推到最遠的角落</li></ul></section>
+<section><h3>向量與矩陣</h3><ul><li><a href="/units/dot-product">內積與正射影</a>：影子長 × 長度</li>
+<li><a href="/units/determinant">行列式與面積</a>：兩個向量張出的平行四邊形</li>
+<li><a href="/units/linear-map">線性變換</a>：矩陣其實在做動作</li>
+<li><a href="/units/eigen-preview">特徵向量預告</a>：只被拉長的方向</li>
+<li><a href="/units/plane-vector">平面向量</a>：位移可以相加、可以伸縮</li>
+<li><a href="/units/cauchy">柯西不等式</a>：影子不會比本人長</li>
+<li><a href="/units/triangle-inequality">三角不等式</a>：繞路不會比較近</li>
+<li><a href="/units/space-vector">空間向量與內積</a>：多一個分量，想法不變</li>
+<li><a href="/units/cross-product">外積</a>：同時垂直兩個向量</li>
+<li><a href="/units/plane-equation">平面方程式</a>：一個法向量決定方向</li>
+<li><a href="/units/space-line">空間中的直線</a>：起點加上 t 倍方向</li>
+<li><a href="/units/linear-system-3">三元一次聯立方程式</a>：三個平面交在哪裡</li>
+<li><a href="/units/matrix-table">矩陣與資料表格</a>：表格乘表格</li></ul></section>
+<section><h3>機率與資料</h3><ul><li><a href="/units/conditional">條件機率與貝氏</a>：資訊來了，判斷要更新</li>
+<li><a href="/units/expectation">期望值</a>：長期平均會落在哪裡</li>
+<li><a href="/units/data-spread">一維數據分析</a>：平均藏起來的東西</li>
+<li><a href="/units/standardize">標準化與相關</a>：不同尺度怎麼比較</li>
+<li><a href="/units/best-fit-line">最適直線</a>：錯得最少的那一條</li>
+<li><a href="/units/random-variable">隨機變數</a>：中心與分散</li>
+<li><a href="/units/binomial">二項分布</a>：高爾頓板上的小球</li>
+<li><a href="/units/geometric-dist">幾何分布</a>：第一次成功要等多久</li>
+<li><a href="/units/hypothesis-test">合理性檢定</a>：結果罕見到該懷疑嗎</li>
+<li><a href="/units/perm-repeat">同物排列</a>：扣掉看不出的重複</li>
+<li><a href="/units/normal-dist">常態分布（直觀）</a>：為什麼那麼多鐘形</li>
+<li><a href="/units/sets">集合與文氏圖</a>：把條件畫成圈圈</li>
+<li><a href="/units/counting">有系統的計數</a>：樹狀圖與取捨原理</li>
+<li><a href="/units/combinations">排列與組合</a>：有沒有順序差多少</li>
+<li><a href="/units/repeat-arrange">重複排列</a>：用過的還可以再用</li>
+<li><a href="/units/grouping">分組分堆</a>：堆沒有名字的時候</li>
+<li><a href="/units/subjective-prob">主觀與客觀機率</a>：信念與頻率</li>
+<li><a href="/units/classical-probability">古典機率</a>：數樣本空間裡的點</li></ul></section>
+<section><h3>微積分</h3><ul><li><a href="/units/fundamental-theorem">微積分基本定理</a>：面積的變化率就是高度</li>
+<li><a href="/units/derivative">導數</a>：割線變成切線</li>
+<li><a href="/units/limit">數列的極限</a>：無限過程有沒有終點</li>
+<li><a href="/units/extrema">導函數的應用</a>：斜率說出形狀</li>
+<li><a href="/units/volume">積分求體積</a>：切成薄片再加回來</li>
+<li><a href="/units/function-limit">函數的極限與連續</a>：圖形接不接得起來</li>
+<li><a href="/units/integral-average">積分的應用：平均與總量</a>：把高低起伏抹平</li></ul></section></main>
+<!-- seo:content:end -->
+<noscript><p style="padding:2em">這個網站的互動圖需要開啟 JavaScript。</p></noscript>
+<script src="assets/vendor/katex/katex.min.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/home.js"></script>
+<!-- seo:cleanup:start -->
+<script>if(document.querySelector("main:not(#seo-content) h1")){document.getElementById("seo-content").remove();}</script>
+<!-- seo:cleanup:end -->
+</body>
+</html>

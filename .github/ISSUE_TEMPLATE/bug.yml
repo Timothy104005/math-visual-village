@@ -1,0 +1,19 @@
+name: 程式或操作問題
+description: 回報互動、排版、手機或瀏覽器問題
+body:
+  - type: input
+    id: url
+    attributes:
+      label: 單元網址或 slug
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重現步驟、實際結果與預期結果
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 瀏覽器、裝置與螢幕尺寸

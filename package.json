@@ -1,0 +1,23 @@
+{
+  "name": "math-visual-village",
+  "version": "0.1.0",
+  "private": true,
+  "description": "圖解數學小鎮 interactive learning lessons",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "python site/tools/serve.py 8765",
+    "check": "node tools/check-release.cjs",
+    "check:seo": "node site/tools/check-seo.cjs",
+    "build:seo": "node site/tools/build-seo.cjs",
+    "build:practice": "node site/tools/build-house-practice.cjs",
+    "coverage": "python site/tools/coverage.py",
+    "test:browser": "node tools/smoke-browser.cjs"
+  },
+  "license": "SEE LICENSE IN LICENSING.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Timothy104005/math-visual-village.git"
+  }
+}

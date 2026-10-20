@@ -1,0 +1,29 @@
+/* The fixed five-question collection shared by unit pages and the practice picker. */
+.house-questions { list-style: none; padding: 0; margin: 22px 0 0; }
+.house-question { padding: 20px 0; border-top: 1px dashed var(--line-mid); min-width: 0; }
+.house-q-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; }
+.house-q-head > b { font-family: var(--font-hand); font-size: 1.2rem; }
+.house-q-head .chip { font-size: .8rem; }
+.house-source { font-size: .82rem; margin: 0 0 10px; overflow-wrap: anywhere; }
+.house-source a { color: var(--m-bluegreen); }
+.house-options { list-style: none; counter-reset: house-option; padding: 0; margin: 10px 0; }
+.house-options > li { counter-increment: house-option; display: flex; gap: 8px; margin: 7px 0; overflow-x: auto; }
+.house-options > li::before { content: '(' counter(house-option) ')'; color: var(--ink-soft); flex-shrink: 0; }
+.house-solution { margin-top: 14px; background: var(--mint-pale); padding: 10px 14px; border-radius: 12px; }
+.house-solution > summary { cursor: pointer; color: var(--m-mint); font-weight: 600; }
+.house-way { margin: 14px 0; }
+.house-way > b { display: block; margin-bottom: 4px; font-family: var(--font-hand); }
+.house-trap { border-left: 3px solid var(--m-peach); padding-left: 10px; }
+.house-answer { padding-top: 12px; margin-top: 12px; border-top: 1px dashed var(--line-mid); }
+.house-practice .past-q, .house-way > div, .house-answer { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pr-house-info { padding: 12px 16px; margin: 8px 0 20px; border: 1px dashed var(--m-mint); border-radius: 12px; background: var(--mint-pale); }
+.pr-house-info p { margin: 0 0 8px; }
+.pr-house-info p:last-child { margin-bottom: 0; }
+@media (max-width: 600px) {
+  .house-practice.sk-card { padding: 18px 14px; }
+  .house-practice .sec-title { flex-wrap: wrap; gap: 6px 10px; }
+  .house-practice .sec-title .en { width: 100%; margin-left: 0; }
+  .house-question { padding: 16px 0; }
+  .house-solution { padding: 10px; }
+  .pr-house-info { padding: 10px 12px; }
+}

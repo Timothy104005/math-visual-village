@@ -1,0 +1,20 @@
+name: 學習疑問／教材修正
+description: 回報看不懂、反例、答案或模型假設的問題
+body:
+  - type: input
+    id: unit
+    attributes:
+      label: 單元網址或 slug
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 卡在哪一步？你如何理解？
+      description: 可附計算、反例與可公開來源；請勿提供個資或受限教材全文。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 預期結果、驗算步驟與來源

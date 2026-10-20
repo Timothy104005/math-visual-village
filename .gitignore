@@ -1,6 +1,12 @@
-.vercel/
-.DS_Store
 node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.wrangler/
+.vercel/
 .claude/
-
-.vercel
+output/
+playwright-report/
+test-results/
